@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>491271525508-25dibovvuo3r75k89o83hq6mom2d7cud.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.491271525508-25dibovvuo3r75k89o83hq6mom2d7cud</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCvJS8gEsjS_3uvq-1RayHd4Gw39gjzHUU</string>
+	<key>GCM_SENDER_ID</key>
+	<string>491271525508</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>ykato.dthrApp</string>
+	<key>PROJECT_ID</key>
+	<string>cosco-22e74</string>
+	<key>STORAGE_BUCKET</key>
+	<string>cosco-22e74.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:491271525508:ios:afc248d83ef6c46a</string>
+	<key>DATABASE_URL</key>
+	<string>https://cosco-22e74.firebaseio.com</string>
+</dict>
+</plist>
