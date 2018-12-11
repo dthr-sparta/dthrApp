@@ -37,58 +37,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let logInButton = TWTRLogInButton(logInCompletion: { session, error in
-            if (session != nil) {
-                print("signed in as \(session!.userName)");
-                print("成功だ\(session!.userName)")
-                
-                //twitterのユーザー名をfirebaseに保存
-                let user = Auth.auth().currentUser
-                if let user = user {
-                    let changeRequest = user.createProfileChangeRequest()
-                    changeRequest.displayName = session!.userName
-                    changeRequest.commitChanges{ error in
-                        if let error = error {
-                            print(error)
-                    
-                            return
-                        }
-                        
-                        //                        let when = DispatchTime.now() + 2
-                        //                        DispatchQueue.main.asyncAfter(deadline: when) {
-                        //                            self.present((self.storyboard?.instantiateViewController(withIdentifier: "FriendsViewController"))!,
-                        //                                         animated: true,
-                        //                                         completion: nil)}
-                        
-                        self.performSegue(withIdentifier: "timeLine", sender: nil)
-                        
-                    }
-                    
-                }
-//                //firebaseに保存される
-//                let authToken = session!.authToken
-//                let authTokenSecret = session!.authTokenSecret
-//
-//                let credential = TwitterAuthProvider.credential(withToken: session!.authToken, secret: session!.authTokenSecret)
-//
-//                //firebaseに保存される
-//                Auth.auth().signInAndRetrieveData(with: credential) { (authResult, error) in
-//                    if let error = error {
-//                        // ...
-//                        return
-//                    }
-//                    // User is signed in
-//                    // ...
-//                }
-//
-
-            } else {
-                print("error: \(error!.localizedDescription)");
-                print("エラーだお: \(error!.localizedDescription)")
-            }
-        })
-        logInButton.center = self.view.center
-        self.view.addSubview(logInButton)
+        
+        
+        
+        
+        
         
 //        TWTRTwitter.sharedInstance().logIn(completion: { (session, error) in
 //            if (session != nil) {
@@ -120,6 +73,57 @@ class ViewController: UIViewController {
         pasTextField.clearButtonMode = .whileEditing
         
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super .viewWillAppear(animated)
+        
+        
+        let logInButton = TWTRLogInButton(logInCompletion: { session, error in
+            if (session != nil) {
+                print("signed in as \(session!.userName)");
+                print("成功だ\(session!.userName)")
+                
+                //twitterのユーザー名をfirebaseに保存
+                let user = Auth.auth().currentUser
+                if let user = user {
+                    let changeRequest = user.createProfileChangeRequest()
+                    changeRequest.displayName = session!.userName
+                    changeRequest.commitChanges{ error in
+                        if let error = error {
+                            print(error)
+                            
+                            return
+                        }
+                        
+                    }
+                    
+                }
+                //firebaseに保存される
+                let authToken = session!.authToken
+                let authTokenSecret = session!.authTokenSecret
+                
+                let credential = TwitterAuthProvider.credential(withToken: session!.authToken, secret: session!.authTokenSecret)
+                
+                //firebaseに保存される
+                Auth.auth().signInAndRetrieveData(with: credential) { (authResult, error) in
+                    if let error = error {
+                        // ...
+                        return
+                    }
+                    // User is signed in
+                    // ...
+                     self.performSegue(withIdentifier: "timeLine", sender: nil)
+                }
+               
+                
+            } else {
+                print("error: \(error!.localizedDescription)");
+                print("エラーだお: \(error!.localizedDescription)")
+            }
+        })
+        logInButton.center = self.view.center
+        self.view.addSubview(logInButton)
     }
     
 //    func setup() {
