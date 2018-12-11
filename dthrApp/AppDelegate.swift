@@ -9,6 +9,9 @@
 import UIKit
 import CoreData
 import Firebase
+//import FirebaseUI
+//import Fabric
+import TwitterKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,9 +21,39 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        //twitterKitに必要な処理
+        TWTRTwitter.sharedInstance().start(withConsumerKey: "OsUDmD2kIjdjqvvCS5WB4HWV2", consumerSecret: "lU6JD1IKQNTVF2Ct3OE4ofBID9XPFCJ8j6B3HRNNxA7AtovorI")
+//
+        
         FirebaseApp.configure()
+       // let authUI = FUIAuth.defaultAuthUI()
+        // You need to adopt a FUIAuthDelegate protocol to receive callback
+        //authUI?.delegate = self as? FUIAuthDelegate
+        
+        
+        
+//        let providers: [FUIAuthProvider] = [
+//
+//            FUITwitterAuth()]
+//        authUI?.providers = providers
+//        //Fabric.with([TWTRTwitter.self])
+//
+//        let authViewController = authUI?.authViewController()
         return true
     }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        //ツイッターボタンが何回でも押せる処理
+        return TWTRTwitter.sharedInstance().application(app, open: url, options: options)
+    }
+    
+//    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+//        if TWTRTwitter.sharedInstance().application(app, open: url, options: options) {
+//            return true
+//        }
+//        return false
+//    }
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

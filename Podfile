@@ -11,7 +11,9 @@ target 'dthrApp' do
   pod 'SDWebImage/WebP'
   pod 'FirebaseDatabase'
   pod 'SVProgressHUD'
-
+  pod 'TwitterKit'
+  pod 'Firebase/Storage'
+  pod 'Firebase/Firestore'
 
 
 end
