@@ -145,7 +145,6 @@ class MakeViewController: UIViewController,UIImagePickerControllerDelegate,UINav
             let documentURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
             let fileURL = documentURL?.appendingPathComponent("tempImage.jpg")
             try! imageData?.write(to: fileURL!, options: [])
-            
             picker.dismiss(animated: true, completion: nil)
             
         }

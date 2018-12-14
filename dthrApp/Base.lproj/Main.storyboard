@@ -181,6 +181,22 @@
                                     <segue destination="sh0-up-uai" kind="show" id="G8i-nf-EX8"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R7a-fb-pnx">
+                                <rect key="frame" x="272" y="18" width="33" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Chat"/>
+                                <connections>
+                                    <segue destination="Fzy-35-clg" kind="show" id="fYv-yt-ljt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zVK-M2-jKv">
+                                <rect key="frame" x="172" y="46" width="31" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="更新"/>
+                                <connections>
+                                    <action selector="refleshB:" destination="AVM-kF-EJg" eventType="touchUpInside" id="eUv-Kf-Hdd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="9xk-qM-enr"/>
@@ -192,7 +208,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TeP-Vb-Gxl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="958" y="-228"/>
+            <point key="canvasLocation" x="991" y="470"/>
         </scene>
         <!--Make View Controller-->
         <scene sceneID="HYG-rh-aIr">
@@ -280,7 +296,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NEx-nl-HUL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1738.4000000000001" y="132.68365817091455"/>
+            <point key="canvasLocation" x="1822" y="827"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="vtb-WY-NNF">
@@ -332,11 +348,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g1R-Me-uJU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="998" y="837"/>
+            <point key="canvasLocation" x="166" y="828"/>
+        </scene>
+        <!--Chat View Controller-->
+        <scene sceneID="Y5N-Yl-ilC">
+            <objects>
+                <viewController id="Fzy-35-clg" customClass="ChatViewController" customModule="dthrApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jla-7g-inv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="6oM-Ry-tVd"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5mB-L5-Siq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1822" y="134"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="yJV-cD-jJQ"/>
-        <segue reference="aQ9-Ov-ERF"/>
+        <segue reference="G8i-nf-EX8"/>
+        <segue reference="VVV-9j-ia3"/>
     </inferredMetricsTieBreakers>
 </document>
