@@ -17,6 +17,13 @@ import SVProgressHUD
 class TimeLineViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     
+    @IBAction func refleshB(_ sender: Any) {
+        refleshControl.addTarget(self, action: #selector(reflesh), for: .valueChanged)
+        
+        tableView.addSubview(refleshControl)
+    }
+    
+    
     
     @IBOutlet var tableView: UITableView!
     
@@ -45,6 +52,7 @@ class TimeLineViewController: UIViewController,UITableViewDelegate,UITableViewDa
         refleshControl.attributedTitle = NSAttributedString(string: "引っ張って更新")
         
         
+        //selector()のカッコ内の関数が呼ばれる
         refleshControl.addTarget(self, action: #selector(reflesh), for: .valueChanged)
         
         tableView.addSubview(refleshControl)
@@ -79,6 +87,7 @@ class TimeLineViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     @objc func reflesh(){
         
+        //引っ張って更新する時に呼ばれる処理
         fetchPost()
         refleshControl.endRefreshing()
         
@@ -86,6 +95,7 @@ class TimeLineViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     func fetchPost(){
         
+        //配列の数とCellの数が合わなくなりエラーが起きるので初期化している。
         self.posts = [Post]()
         self.eventName_Array = [String]()
         self.postImage_Array = [String]()
@@ -96,10 +106,12 @@ class TimeLineViewController: UIViewController,UITableViewDelegate,UITableViewDa
         self.details_Array = [String]()
         self.posst = Post()
         
+        
+        //postの投稿をとってくる処理。googlService-info.plistを参照してデータを取ってくる場所を特定している。
         let ref = Database.database().reference()
         ref.child("post").queryLimited(toFirst: 10).observeSingleEvent(of: .value) { (snap,error) in
             
-            
+            //snapの中にすべてのデータが入っている。その中身(value)をpostSnapに代入する処理
             let postsSnap = snap.value as? [String:NSDictionary]
             if postsSnap == nil{
                 return
