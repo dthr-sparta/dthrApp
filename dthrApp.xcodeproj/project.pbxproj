@@ -16,6 +16,8 @@
 		308DEC2521B6561200A57A99 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 308DEC2321B6561200A57A99 /* LaunchScreen.storyboard */; };
 		9F2A971021C3738E00E7E786 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2A970F21C3738E00E7E786 /* ChatViewController.swift */; };
 		9F2A971221C3764E00E7E786 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2A971121C3764E00E7E786 /* Message.swift */; };
+		9F2A971421C4B0BB00E7E786 /* MypageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2A971321C4B0BB00E7E786 /* MypageViewController.swift */; };
+		9F2A971621C5012800E7E786 /* MyPageEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2A971521C5012800E7E786 /* MyPageEditViewController.swift */; };
 		9F48731F21BB3D9E00B00B9F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F48731E21BB3D9E00B00B9F /* GoogleService-Info.plist */; };
 		9F5E804221BCE9CB005E5E85 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5E804121BCE9CB005E5E85 /* Post.swift */; };
 		9F6A300321B9EB1100988F30 /* TimeLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6A300221B9EB1100988F30 /* TimeLineViewController.swift */; };
@@ -35,6 +37,8 @@
 		69B0975EBB4A9F61ACBA3C22 /* Pods-dthrApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dthrApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-dthrApp/Pods-dthrApp.release.xcconfig"; sourceTree = "<group>"; };
 		9F2A970F21C3738E00E7E786 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		9F2A971121C3764E00E7E786 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		9F2A971321C4B0BB00E7E786 /* MypageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageViewController.swift; sourceTree = "<group>"; };
+		9F2A971521C5012800E7E786 /* MyPageEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageEditViewController.swift; sourceTree = "<group>"; };
 		9F48731E21BB3D9E00B00B9F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9F48732321BBAB6300B00B9F /* dthrApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "dthrApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		9F5E804121BCE9CB005E5E85 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
@@ -78,14 +82,16 @@
 		308DEC1621B6561000A57A99 /* dthrApp */ = {
 			isa = PBXGroup;
 			children = (
+				308DEC1B21B6561000A57A99 /* Main.storyboard */,
+				9F2A971521C5012800E7E786 /* MyPageEditViewController.swift */,
+				9F2A971321C4B0BB00E7E786 /* MypageViewController.swift */,
+				9F6A300221B9EB1100988F30 /* TimeLineViewController.swift */,
+				9F6A300421BA456700988F30 /* MakeViewController.swift */,
 				308DEC1721B6561000A57A99 /* AppDelegate.swift */,
 				308DEC1921B6561000A57A99 /* ViewController.swift */,
-				308DEC1B21B6561000A57A99 /* Main.storyboard */,
 				9F2A970F21C3738E00E7E786 /* ChatViewController.swift */,
 				9F2A971121C3764E00E7E786 /* Message.swift */,
-				9F6A300421BA456700988F30 /* MakeViewController.swift */,
 				9F90423421B8FD5C005DA160 /* loginViewController.swift */,
-				9F6A300221B9EB1100988F30 /* TimeLineViewController.swift */,
 				9F5E804121BCE9CB005E5E85 /* Post.swift */,
 				308DEC2121B6561200A57A99 /* Assets.xcassets */,
 				308DEC2321B6561200A57A99 /* LaunchScreen.storyboard */,
@@ -317,9 +323,11 @@
 				9F2A971021C3738E00E7E786 /* ChatViewController.swift in Sources */,
 				9F2A971221C3764E00E7E786 /* Message.swift in Sources */,
 				308DEC2021B6561000A57A99 /* dthrApp.xcdatamodeld in Sources */,
+				9F2A971421C4B0BB00E7E786 /* MypageViewController.swift in Sources */,
 				9F6A300321B9EB1100988F30 /* TimeLineViewController.swift in Sources */,
 				9F6A300521BA456700988F30 /* MakeViewController.swift in Sources */,
 				9F5E804221BCE9CB005E5E85 /* Post.swift in Sources */,
+				9F2A971621C5012800E7E786 /* MyPageEditViewController.swift in Sources */,
 				308DEC1821B6561000A57A99 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

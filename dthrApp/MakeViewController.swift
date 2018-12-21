@@ -93,6 +93,8 @@ class MakeViewController: UIViewController,UIImagePickerControllerDelegate,UINav
         
         let rootRef = Database.database().reference(fromURL:"https://cosco-22e74.firebaseio.com/").child("post")
         let storage = Storage.storage().reference(forURL: "gs://cosco-22e74.appspot.com")
+        
+        //key何のためにあるかわからない。
         let key = rootRef.child("User").childByAutoId().key
         let imageRef = storage.child("Users").child("\(key).jpg")
         
@@ -102,6 +104,8 @@ class MakeViewController: UIViewController,UIImagePickerControllerDelegate,UINav
             data = image.jpegData(compressionQuality: 0.01)! as NSData
         }
         
+        
+        //putDataでStorageサーバーに保存している
         let uploadTask = imageRef.putData(data as Data, metadata: nil) { (metaData, error) in
             
             if error != nil{
@@ -116,6 +120,8 @@ class MakeViewController: UIViewController,UIImagePickerControllerDelegate,UINav
                     
                     let feed = ["postImage":url?.absoluteString,"details":self.detailsText.text,"eventName":self.eventNameText.text,"time":self.timeText.text,"price":self.priceText.text,"place":self.placeText.text,"people":self.peopleText.text] as [String:Any]
                     let postFeed = ["\(key)":feed]
+                    
+                    //データの上書きでなく追加
                     rootRef.updateChildValues(postFeed)
                     
                     SVProgressHUD.dismiss()
@@ -135,20 +141,25 @@ class MakeViewController: UIViewController,UIImagePickerControllerDelegate,UINav
     }
     
     
+    //写真を表示させるために必要
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        
+
         if let pickedImage = info[.originalImage] as? UIImage{
-            
+
+            //写真を映るようににする処理
             self.imageView.image = pickedImage
-            
+
+            //写真を圧縮している
             let imageData = pickedImage.jpegData(compressionQuality: 1.0)
+
+            //定型文
             let documentURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
-            let fileURL = documentURL?.appendingPathComponent("tempImage.jpg")
-            try! imageData?.write(to: fileURL!, options: [])
+
+
             picker.dismiss(animated: true, completion: nil)
-            
+
         }
-        
+    
         
         
         

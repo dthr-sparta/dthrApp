@@ -131,6 +131,7 @@ class TimeLineViewController: UIViewController,UITableViewDelegate,UITableViewDa
                 self.details_Array = [String]()
                 self.posst = Post()
                 
+            
                 if let eventName = post["eventName"] as? String,let time = post["time"] as? String,let price =  post["price"] as? String,let place = post["place"] as? String,let people =  post["people"] as? String,let details = post["details"] as? String,let postImage = post["postImage"] as? String{
                     
                     
@@ -152,7 +153,7 @@ class TimeLineViewController: UIViewController,UITableViewDelegate,UITableViewDa
                     self.people_Array.append(self.posst.people)
                     self.details_Array.append(self.posst.details)
 
-                    
+                    print("fitti")
                 }
                 
                 self.posts.append(self.posst)
@@ -179,7 +180,8 @@ class TimeLineViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        
+        print("tebleeee")
+
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
         let profileImageView = cell.viewWithTag(1) as! UIImageView

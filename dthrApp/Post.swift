@@ -18,5 +18,8 @@ class Post: NSObject {
     var price:String = String()
     var details:String = String()
 
-
+    var userName:String = String()
+    var profile:String = String()
+    var mypagePhote:String = String()
+    
 }
